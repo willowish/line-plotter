@@ -29,6 +29,10 @@ export const useCSVParser = (): UseCsvParserResult => {
 					// todo: handle errors
 					return;
 				}
+				if (isNaN(Number(results.data[0][0]))) {
+					setCsvData(results.data.slice(1));
+					return;
+				}
 				setCsvData(results.data);
 				if (isPaused) {
 					parser.pause();

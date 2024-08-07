@@ -46,11 +46,11 @@ export const FileInput = ({ acceptedFileType, handleFileSelect }: Props): ReactE
 			/>
 			<label
 				htmlFor={id}
-				className='border border-gray-300 p-2 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500'
+				className='border border-gray-300 p-2 rounded-md cursor-pointer hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 truncate'
 			>
-				Choose File
+				{!fileName && <p>Choose File</p>}
+				{fileName && <p >{fileName}</p>}
 			</label>
-			{fileName && <p className='text-green-600'>Selected file: {fileName}</p>}
 			{error && <p className='text-red-600'>{error}</p>}
 		</div>
 	);

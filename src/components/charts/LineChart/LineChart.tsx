@@ -4,12 +4,14 @@ import {XYPlot, XAxis, YAxis, LineSeries} from 'react-vis';
 
 import { LineChartData, LineChartRow } from '@/model/charts/lineChart/LineChartData.model.ts';
 
+import 'react-vis/dist/style.css';
+
 type Props = {
 	data: LineChartData;
 	width: number;
 };
 
-export const LinePlotVis = ({ data, width }: Props): ReactElement => {
+export const LineChart = ({ data, width }: Props): ReactElement => {
 	const yMin = useMemo(() => Math.min(...data.map((d) => d[1])), [data]);
 	const yMax = useMemo(() => Math.max(...data.map((d) => d[1])), [data]);
 	const xMin = useMemo(() => Math.min(...data.map((d) => d[0])), [data]);
