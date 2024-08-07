@@ -48,5 +48,6 @@ module.exports = {
 		],
 		'@typescript-eslint/no-unsafe-assignment': 'off',
 		'@typescript-eslint/no-unsafe-argument': 'off',
+		'react/jsx-max-props-per-line': [2, { 'maximum': 1, 'when': 'always' }],
 	},
 };
